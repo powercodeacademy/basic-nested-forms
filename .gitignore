@@ -35,9 +35,46 @@ jspm_packages
 # Ignore bundler config.
 /.bundle
 
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/db/*.sqlite3-*
+
+# Ignore Rails credentials and secrets
+/config/master.key
+/config/credentials.yml.enc
+/config/initializers/secret_token.rb
+/config/secrets.yml
+
+# Ignore log, tmp, and cache files
+/log/*
+!/log/.keep
+/tmp
+/tmp/*
+/tmp/pids/*
+/tmp/cache/*
+/tmp/sockets/*
+
+# Ignore byebug history
+/.byebug_history
+
+# Ignore spring files
+/tmp/spring/*
+
+# Ignore coverage reports
+/coverage/
+
+# Ignore node modules and yarn
+/node_modules/
+/yarn-error.log
+
+# Ignore editor and OS files
+*.swp
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+.vscode/
 
 # Ignore all logfiles and tempfiles.
 /log/*
