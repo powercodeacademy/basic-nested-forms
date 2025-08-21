@@ -1,7 +1,4 @@
-
 source 'https://rubygems.org'
-
-
 
 # Ruby and Rails
 ruby '3.3.5'
@@ -13,9 +10,9 @@ gem 'puma', '~> 6.0'
 gem 'webrick', '~> 1.8'
 
 # JavaScript and CSS (Rails 7 uses import maps or jsbundling-rails, but keep jquery-rails for legacy)
+gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.2'
-gem 'jbuilder', '~> 2.0'
 
 # Misc
 gem 'ostruct'
@@ -28,10 +25,10 @@ group :development, :test do
 end
 
 group :development do
-  # gem 'spring'
+  gem 'rubocop', '~> 1.53.0'
 end
 
 # Docs
 group :doc do
-  gem 'sdoc', '~> 0.4.0'
+  gem 'sdoc'
 end
