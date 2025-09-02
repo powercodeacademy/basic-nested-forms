@@ -87,10 +87,11 @@ returning all of the information about the first address at 33 West 26th St.
 Notice the `addresses_attributes` key. That key is similar to the `artist_name`
 key we used previously. Last time, we handled this by writing a `artist_name=`
 method. In this case, we're going to do something _super_ similar. Instead of
+
 writing our own `addresses_attributes=` method, we'll let Rails take care of it
 for us. We're going to use `accepts_nested_attributes_for` and the `fields_for`
 FormHelper.
-
+Now open up `bin/rails c` and run our `addresses_attributes` method that was created for us by `accepts_nested_attributes_for`.
 Last time, we first wrote our setter method in the model. This time let's modify
 our `Person` model to include an `accepts_nested_attributes_for :addresses`
 line.
@@ -132,7 +133,7 @@ Peasy. We are going to use `fields_for` to make this happen.
 ```erb
 # app/views/people/new.html.erb
 
-<%= form_for @person do |f| %>
+<%= form_with model: @person, local: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
 
@@ -220,6 +221,8 @@ def person_params
   )
 end
 ```
+
+Load up the page and see the result of what you and Rails have written together.
 
 ## Avoiding duplicates
 
